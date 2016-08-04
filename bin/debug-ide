@@ -1,0 +1,7 @@
+#!/bin/sh
+
+trap "trap - SIGTERM && kill -- -$$" SIGINT SIGTERM EXIT
+
+../node_modules/.bin/node-inspector --hidden node_modules/ --hidden test/ --web-host $(/sbin/ifconfig eth0 | grep "inet addr" | awk -F: '{print $2}' | awk '{print $1}') --web-port $UID & ../node_modules/.bin/mocha --debug-brk --watch
+
+trap - SIGINT SIGTERM EXIT
