@@ -1,7 +1,2 @@
-
-
-describe('index', function() {
-  it('runs', function() {
-    expect(true).toEqual(true)
-  })
-})
+const React = require('react');
+const { shallow } = require('enzyme');

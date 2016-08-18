@@ -4,19 +4,18 @@
     <title>React Event System Lab</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="node_modules/mocha/mocha.css" />
+    <link rel="stylesheet" href="node_modules/mocha/mocha.css">
   </head>
   <body>
     <main id="main">
     </main>
-    <!-- Don't forget to include React dependencies! -->
-    <script src="index.js"></script>
     <!-- Open this file and call `mocha.run()` in console to run tests -->
     <div id="mocha"></div>
     <script src="node_modules/mocha/mocha.js"></script>
     <script src="node_modules/expect/umd/expect.min.js"></script>
     <script>mocha.setup('bdd');</script>
-    <script src="index.js"></script>
-    <script src="test/index-test.js"></script>
+
+    <script src="bundle.js"></script>
+    <script src="browser-test-bundle.js"></script>
   </body>
 </html>

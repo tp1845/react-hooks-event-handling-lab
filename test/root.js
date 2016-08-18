@@ -1,23 +1,21 @@
-global.expect = require('expect');
-
-const jsdom = require('jsdom');
 const path = require('path');
+const jsdom = require('jsdom').jsdom;
+const fs = require('fs');
 
-before(function(done) {
-  const src = path.resolve(__dirname, '..', 'index.js');
-  const babelResult = require('babel-core').transformFileSync(src, {
-    presets: ['es2015']
-  });
-  const html = path.resolve(__dirname, '..', 'index.html');
+const html = fs.readFileSync(path.resolve(__dirname, '..', 'index.html'));
+const exposedProperties = ['window', 'navigator', 'document'];
 
-  jsdom.env(html, [], {
-    src: babelResult.code,
-    virtualConsole: jsdom.createVirtualConsole().sendTo(console)
-  }, (err, window) => {
-    if (err) {
-      return done(err);
-    }
+global.expect = require('expect');
+global.document = jsdom(html);
+global.window = document.defaultView;
 
-    return done();
-  });
-}); 
+Object.keys(document.defaultView).forEach((property) => {
+  if (typeof global[property] === 'undefined') {
+    exposedProperties.push(property);
+    global[property] = document.defaultView[property];
+  }
+});
+
+global.navigator = {
+  userAgent: 'node.js'
+};

@@ -39,5 +39,6 @@ jspm_packages
 # Optional REPL history
 .node_repl_history
 
-# Learn-specific .results.json
+# Learn-specific
 .results.json
+bundle.js

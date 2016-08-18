@@ -10,7 +10,11 @@
   "scripts": {
     "debug": "node-debug --hidden node_modules _mocha --watch",
     "debug-ide": "./bin/debug-ide",
-    "test": "mocha -R mocha-multi --reporter-options nyan=-,json=.results.json"
+    "copy-git-hooks": "./bin/copy-hooks",
+    "test": "mocha -R mocha-multi --require test/root.js --reporter-options nyan=-,json=.results.json",
+    "bundle": "browserify index.js -t babelify --exclude react/addons --exclude react/lib/ExecutionEnvironment --exclude react/lib/ReactContext -o bundle.js",
+    "bundle:test": "browserify test/index-test.js -t babelify --exclude react/addons --exclude react/lib/ExecutionEnvironment --exclude react/lib/ReactContext -o browser-test-bundle.js",
+    "postinstall": "npm run copy-git-hooks"
   },
   "repository": {
     "type": "git",
@@ -30,11 +34,16 @@
   "devDependencies": {
     "babel-core": "^6.11.4",
     "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.11.1",
+    "babelify": "^7.3.0",
+    "browserify": "^13.1.0",
+    "enzyme": "^2.4.1",
     "expect": "^1.20.2",
     "jsdom": "^9.4.1",
-    "mocha": "^3.0.1",
-    "mocha-multi": "^0.9.1",
-    "node-inspector": "^0.12.8"
+    "mocha": "^3.0.0",
+    "mocha-multi": "^0.9.0",
+    "node-inspector": "^0.12.8",
+    "react-addons-test-utils": "^15.3.0"
   },
   "dependencies": {
     "react": "^15.3.0",

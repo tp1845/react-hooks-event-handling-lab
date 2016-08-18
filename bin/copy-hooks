@@ -1,0 +1,8 @@
+#!/bin/sh
+
+echo 'Copying Git hooks...'
+cd ./.git/hooks
+
+echo 'Copying pre-commit Git hook'
+ln -f -s ../../hooks/pre-commit
+chmod 755 ./pre-commit
