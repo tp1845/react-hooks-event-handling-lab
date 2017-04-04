@@ -1,9 +1,9 @@
-const React = require('react');
-const { shallow } = require('enzyme');
-const sinon = require('sinon');
+import React from 'react';
+import { shallow } from 'enzyme';
+import sinon from 'sinon';
 
-const Keypad = require('../components/Keypad');
-const EyesOnMe = require('../components/EyesOnMe');
+import Keypad from '../components/Keypad';
+import EyesOnMe from '../components/EyesOnMe';
 
 const spy = sinon.spy(console, 'log');
 
