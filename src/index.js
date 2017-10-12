@@ -9,5 +9,5 @@ ReactDOM.render(
     <Keypad />
     <EyesOnMe />
   </div>,
-  document.getElementById('root')
+  document.getElementById('global')
 );
