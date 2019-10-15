@@ -4,7 +4,13 @@
 
 In this lab you'll respond to events in React and write event handlers.
 
+> **Note**: The components are not defined yet, but the files are present.
+> Before the tests will run, you must export components from `EyesOnMe.js` and
+> `Keypad.js`. To get started, write very basic components that you _know_ will
+> not pass all the tests, but at least be valid React.
+
 ## Keypad
+
 ![Keypad](https://media.giphy.com/media/3o6MbdTboTFWOUsLkc/giphy.gif)
 
 Mr. Burns has requested us to build a new keypad component for the nuclear
