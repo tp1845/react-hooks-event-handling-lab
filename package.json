@@ -37,7 +37,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "mocha -R mocha-multi --reporter-options spec=-,json=.results.json",
+    "test": "mocha --timeout 5000 -R mocha-multi --reporter-options spec=-,json=.results.json",
     "dev:hot": "webpack-dev-server --hot --inline --progress --colors --watch --display-error-details --display-cached --content-base ./",
     "test:watch": "npm run test -- --watch",
     "eject": "react-scripts eject"
