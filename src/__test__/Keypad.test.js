@@ -1,5 +1,6 @@
 import '@testing-library/jest-dom';
 import { expect } from 'chai';
+import sinon from 'sinon';
 import React from 'react'
 import Enzyme, { shallow } from 'enzyme';
 import Adapter from '@wojtekmaj/enzyme-adapter-react-17'
@@ -12,10 +13,6 @@ const spy = sinon.spy(console, 'log');
 describe('<Keypad />', () => {
   const wrapper = shallow(<Keypad />);
 
-  afterEach(function () {
-    spy.reset();
-  });
-
   it('should have one input', () => {
     expect(wrapper.find('input[type]').length).to.equal(1, 'The component has zero or more than one input.')
   });
@@ -25,7 +22,7 @@ describe('<Keypad />', () => {
   });
 
   it('should trigger console output when typing', () => {
-    wrapper.find('input[type="password"]').simulate('keyUp');
+    wrapper.find('input[type="password"]').simulate('change');
     expect(spy.calledOnce, 'The console output is not being triggered when typing').to.be.true;
     expect(spy.firstCall.args[0]).to.equal('Entering password...', 'The console output is not the expected string.');
   });

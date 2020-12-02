@@ -1,5 +1,6 @@
 import '@testing-library/jest-dom';
 import { expect } from 'chai';
+import sinon from 'sinon';
 import React from 'react'
 import Enzyme, { shallow } from 'enzyme';
 import Adapter from '@wojtekmaj/enzyme-adapter-react-17'
@@ -7,13 +8,12 @@ import EyesOnMe from '../components/EyesOnMe'
 
 Enzyme.configure({ adapter: new Adapter() })
 
-const spy = sinon.spy(console, 'log');
-
 describe('<EyesOnMe />', () => {
+  const spy = sinon.spy(console, 'log');
   const wrapper = shallow(<EyesOnMe />);
 
   afterEach(() => {
-    spy.reset();
+    spy.resetHistory();
   });
 
   it('should have one button', () => {

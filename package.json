@@ -14,7 +14,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "echo \".results.json\" && react-scripts test --reporters=@ihollander/jest-learn-reporter --reporters=default",
+    "test": "echo \".results.json\" && react-scripts test --reporters=@ihollander/jest-learn-reporter --reporters=default --watchAll",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
