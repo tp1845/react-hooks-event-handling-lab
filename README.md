@@ -37,4 +37,4 @@ that registers whenever he focuses on you, _and_ when his eyes are drifting off.
 
 ## Resources
 
-- [React Events](https://facebook.github.io/react/docs/events.html)
+- [React Events](https://reactjs.org/docs/events.html)
