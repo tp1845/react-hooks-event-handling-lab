@@ -1,4 +1,4 @@
-# React Event System Lab
+# Event Handling in React Lab
 
 ## Overview
 
