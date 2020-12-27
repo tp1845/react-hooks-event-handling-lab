@@ -3,13 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-scripts": "4.0.1"
+  },
+  "devDependencies": {
+    "@ihollander/jest-learn-reporter": "^1.0.1",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-scripts": "4.0.1",
-    "web-vitals": "^0.2.4"
+    "mocha": "^8.2.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -34,13 +37,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "@ihollander/jest-learn-reporter": "^1.0.1",
-    "@wojtekmaj/enzyme-adapter-react-17": "^0.3.1",
-    "chai": "^4.2.0",
-    "enzyme": "^3.11.0",
-    "mocha": "^8.2.1",
-    "sinon": "^9.2.1"
   }
 }
