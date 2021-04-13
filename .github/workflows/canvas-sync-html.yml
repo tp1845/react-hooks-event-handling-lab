@@ -4,7 +4,7 @@ name: Sync with Canvas HTML
 
 on:
   push:
-    branches: [master]
+    branches: [master, main]
     paths:
       - "README.md"
 
@@ -20,14 +20,10 @@ jobs:
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 2.6
-
-      # hidden dep, could remove this step if Gemfile for github-to-canvas is updated
-      - name: Install byebug
-        run: gem install byebug
+          ruby-version: 2.7
 
       - name: Install github-to-canvas
-        run: gem install github-to-canvas -v 0.1.8
+        run: gem install github-to-canvas
 
       - name: Sync from .canvas file
         run: github-to-canvas -a -lr --forkable --contains-html
