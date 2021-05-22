@@ -1,8 +1,12 @@
 # Event Handling in React Lab
 
+## Learning Goals
+
+- Add event listeners to DOM elements in React
+
 ## Overview
 
-In this lab you'll respond to events in React and write event handlers.
+In this lab, you'll respond to events in React and write event handlers.
 
 > **Note**: The components are not defined yet, but the files are present.
 > Before the tests will run, you must export components from `EyesOnMe.js` and
