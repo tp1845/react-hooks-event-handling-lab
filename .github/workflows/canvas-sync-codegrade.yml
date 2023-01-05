@@ -1,6 +1,4 @@
-# Secret stored in learn-co-curriculum Settings/Secrets
-
-name: Sync with Canvas HTML
+name: Sync with Canvas CodeGrade
 
 on:
   push:
@@ -20,13 +18,14 @@ jobs:
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 2.7
+          ruby-version: 2.6
 
       - name: Install github-to-canvas
         run: gem install github-to-canvas
 
+      # Secret stored in learn-co-curriculum Settings/Secrets
       - name: Sync from .canvas file
-        run: github-to-canvas -a -lr --forkable --contains-html
+        run: github-to-canvas -a -lr --contains-html
         env:
           CANVAS_API_KEY: ${{ secrets.CANVAS_API_KEY }}
           CANVAS_API_PATH: ${{ secrets.CANVAS_API_PATH }}
